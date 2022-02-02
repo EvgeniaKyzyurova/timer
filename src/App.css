@@ -1,38 +1,77 @@
-.App {
+body{
+  background-color: bisque;
+}
+
+.header{
+  font-weight: 600;
+  font-size: 20px;
+  color: darkslategrey;
+  padding-bottom: 50px;
+}
+
+.container{
+  margin: 0 auto;
+  padding: 30px;
+  width: 400px;
+  height: 300px;
+  box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 30px;
+  background-color: white;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.time{
+  margin: 0 10px;
+  
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+.btn{
+  width: 100px;
+  height: 40px;
+  border: 2px solid;
+  border-radius: 10px;
+  background-color: white;
+  margin: 50px 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.startBtn{
+  border: 2px solid blue;
+}
+.startBtn:hover{
+  box-shadow: 0px 2px 20px rgba(16, 19, 202, 0.411);
+}
+.startBtn:active{
+  background-color: rgba(83, 170, 241, 0.74);
 }
 
-.App-link {
-  color: #61dafb;
+.stopBtn{
+  border: 2px solid red;
+}
+.stopBtn:hover{
+  box-shadow: 0px 2px 20px rgba(243, 69, 46, 0.205);
+}
+.stopBtn:active{
+  background-color: rgba(241, 93, 83, 0.74);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.waitBtn{
+  border: 2px solid rgb(255, 196, 0);
+}
+.waitBtn:hover{
+  box-shadow: 0px 2px 20px rgba(202, 159, 16, 0.411);
+}
+.waitBtn:active{
+  background-color: rgba(241, 204, 83, 0.74);
+}
+
+
+.resetBtn{
+  border: 2px solid rgb(8, 110, 34);
+}
+.resetBtn:hover{
+  box-shadow: 0px 2px 20px rgba(27, 102, 61, 0.582);
+}
+.resetBtn:active{
+  background-color: rgba(56, 168, 93, 0.774);
 }
