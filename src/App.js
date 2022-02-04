@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
-import {interval, Subject} from "rxjs";
-import {takeUntil} from "rxjs/operators";
+import { interval, Subject, fromEvent } from "rxjs";
+import { takeUntil, map, buffer, debounceTime, filter } from "rxjs/operators";
 import './App.css';
 
 function App() {
@@ -33,11 +33,22 @@ function App() {
             setTime(0);
         }
     }
+
     const handleWait = () => {
-        if (time !== 0) {
-            setWatchOn(false)
-        }
-    }
+        const mouse$ = fromEvent(document.querySelector(".waitBtn"), "click");
+        const buff$ = mouse$.pipe(debounceTime(300));
+        const click$ = mouse$.pipe(
+          buffer(buff$),
+          map((list) => {
+            return list.length;
+          }),
+          filter((x) => x === 2)
+        );
+        click$.subscribe(() => {
+            setWatchOn(false);
+        });
+    };
+
     const handleReset = () => {
         setTime(0);
         setWatchOn(true);
